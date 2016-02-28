@@ -389,7 +389,6 @@ Ship = function () {
                              [-3,  6,
                                0, 11,
                                3,  6]);
-
   this.delayBeforeBullet = 0;
 
   this.postMove = this.wrapPostMove;
@@ -422,6 +421,7 @@ Ship = function () {
     if (KEY_STATUS.space) {
       if (this.delayBeforeBullet <= 0) {
         for (var i = 0; i < this.bullets.length; i++) {
+          this.delayBeforeBullet = 10;
           if (!this.bullets[i].visible) {
             SFX.laser();
             var bullet = this.bullets[i];
